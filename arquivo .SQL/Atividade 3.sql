@@ -2,7 +2,7 @@ CREATE DATABASE db_escola;
 
 USE db_escola;
 
-CREATE TABLE tb_escola(
+CREATE TABLE tb_estudantes(
     id BIGINT AUTO_INCREMENT,
 	aluno VARCHAR(255) NOT NULL,
 	genero VARCHAR(255),
@@ -17,9 +17,9 @@ CREATE TABLE tb_escola(
 
 -- Funcionamento da Tabela
 
-SELECT * FROM tb_escola;
+SELECT * FROM tb_estudantes;
 
-INSERT INTO tb_escola(aluno, genero, idade, matricula, serie, frequencia, diciplina, nota) 
+INSERT INTO tb_estudantes(aluno, genero, idade, matricula, serie, frequencia, diciplina, nota) 
 VALUES ("David Samuel", "Masculino", 13, "2018-02-23", 7, 80, "Matemática", 7.5),
 ("Ana Fernanda", "Feminino", 12, "2019-02-18", 7, 76, "Ciências", 8.6),
 ("Gael Elton", "Masculino", 12, "2019-01-21", 7, 71, "Quimica", 6.8),
@@ -33,9 +33,11 @@ VALUES ("David Samuel", "Masculino", 13, "2018-02-23", 7, 80, "Matemática", 7.5
 
 -- Aprimorar os elemenentos da Tabela
 
-DELETE FROM tb_escola WHERE Id >= 11;
+SELECT * FROM tb_estudantes WHERE nota > 7.0;
 
-SELECT * FROM tb_escola WHERE nota >= 7.0;
+SELECT * FROM tb_estudantes WHERE nota < 7.0;
 
-SELECT * FROM tb_escola WHERE nota <= 7.0;
+UPDATE tb_estudantes SET nota = 10.0 WHERE id = 7;
+
+SELECT * FROM tb_estudantes;
 
